@@ -20,7 +20,7 @@ namespace shellcode_gen
             raw = File.ReadAllBytes(loc);
             
             // save bytecode into useable format
-            string csParsed = "byte[] shellcode = { ";
+            string csParsed = "byte[] bytecode = { ";
             for (int i = 0; i < raw.Length; i++)
             {
                 csParsed += "0x" + raw[i].ToString("X2") + ", ";
