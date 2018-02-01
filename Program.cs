@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace shellcode_gen
 {
@@ -32,9 +29,8 @@ namespace shellcode_gen
             }
             csParsed += " }";
 
-            string saveLoc = loc.Substring(loc.LastIndexOf("\\")) + "shellcode.cs";
-            Console.WriteLine("Saving formatted bytecode at " + saveLoc);
-            File.WriteAllBytes(saveLoc, Encoding.ASCII.GetBytes(csParsed));
+            Console.WriteLine("Saving formatted bytecode");
+            File.WriteAllBytes("bytecode.cs", Encoding.ASCII.GetBytes(csParsed));
             Console.WriteLine("Done!");
 
             Console.ReadKey();
